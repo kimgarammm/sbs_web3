@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup</title>
+    <script>
+        let currentPopUp
+        let inputText
+        document.addEventListener("DOMContentLoaded",()=>{
+            let input = docuemt.querySelector('#input')
+            input.addEventListener('change'),()=>{
+                inputText = 
+            }
+        })
+
+        //팝업창 열기
+        function openPopUp(){
+            //window.open('새창 주소','창이름''설정옵셥')
+
+            let option = ' width=400, height=500, left=100'
+            let etx= 'toorbar=yes,menubar=yes,location=yes,resizable=no, status=yes'
+            option+=etc
+            currentPopUp = window.open('popup.html','팝업',option)
+        }
+
+        //팝업창 제어
+        function openControl(){
+            let option= 'width=800 , height=600, top=100 left=100'
+            let newWindow = window.open('','팝업2',option)
+            let h2 = '<h2>새 창에서 팝업창 열기</h2>'
+            newWindow.document.write(h2)
+
+            currentPopUp = newWindow
+        }
+        function closeControl(){
+            currentPopUp.close()
+        }
+        function appendPopUp(){
+            let h3 = document.createElement('h3')
+            h3.append(inputText)
+            currentPopUp.document.body.
+        }
+    </script>
+</head>
+<body>
+    <h1>팝업창을 열어보세요</h1>
+    <button type="button" onclick="openPopUp();">팝업창 열기(1)</button>
+    <button type="button" onclick="openControl();">팝업창 제어(2)</button>
+    <br>
+    <br>
+    <button type="button" onclick="closePopUp();">팝업창 닫기(1)</button>
+    <button type="button" onclick="closeControl();">팝업창 닫기(2)</button>
+    <br><br>
+    <input type="text" id="input">
+    <button type="button" onclick="appendPopUp();">팝업창에 전달</button>
+</body>
+</html>
